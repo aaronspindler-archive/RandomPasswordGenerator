@@ -55,7 +55,7 @@ namespace RandomPasswordGenerator
         {
             for (int i = 0; i <= passwordLength;i++)
             {
-                int x = gen.Next(4);
+                int x = gen.Next(10);
 
                 switch(x)
                 {
@@ -71,7 +71,57 @@ namespace RandomPasswordGenerator
                     case 3:
                         password[i] = ('4');
                         break;
-
+                    case 4:
+                        password[i] = ('5');
+                        break;
+                    case 5:
+                        password[i] = ('6');
+                        break;
+                    case 6:
+                        password[i] = ('7');
+                        break;
+                    case 7:
+                        password[i] = ('8');
+                        break;
+                    case 8:
+                        password[i] = ('9');
+                        break;
+                    case 9:
+                        password[i] = ('0');
+                        break;
+                    case 10:
+                        password[i] = ('A');
+                        break;
+                    case 11:
+                        password[i] = ('B');
+                        break;
+                    case 12:
+                        password[i] = ('C');
+                        break;
+                    case 13:
+                        password[i] = ('D');
+                        break;
+                    case 14:
+                        password[i] = ('E');
+                        break;
+                    case 15:
+                        password[i] = ('F');
+                        break;
+                    case 16:
+                        password[i] = ('G');
+                        break;
+                    case 17:
+                        password[i] = ('H');
+                        break;
+                    case 18:
+                        password[i] = ('I');
+                        break;
+                    case 19:
+                        password[i] = ('J');
+                        break;
+                    case 20:
+                        password[i] = ('K');
+                        break;
                 }
             }
         }
