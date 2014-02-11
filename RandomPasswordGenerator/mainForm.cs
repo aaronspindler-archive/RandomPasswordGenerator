@@ -57,6 +57,13 @@ namespace RandomPasswordGenerator
             {
                 int x = gen.Next(10);
 
+                //Case Numbers
+                //Category              Numbers
+                //Numbers               0 - 9
+                //Uppercase             10 - 35
+                //Lowercase             36 - 61
+                //Special Characters    
+
                 switch(x)
                 {
                     case 0:
@@ -121,6 +128,129 @@ namespace RandomPasswordGenerator
                         break;
                     case 20:
                         password[i] = ('K');
+                        break;
+                    case 21:
+                        password[i] = ('L');
+                        break;
+                    case 22:
+                        password[i] = ('M');
+                        break;
+                    case 23:
+                        password[i] = ('N');
+                        break;
+                    case 24:
+                        password[i] = ('O');
+                        break;
+                    case 25:
+                        password[i] = ('P');
+                        break;
+                    case 26:
+                        password[i] = ('Q');
+                        break;
+                    case 27:
+                        password[i] = ('R');
+                        break;
+                    case 28:
+                        password[i] = ('S');
+                        break;
+                    case 29:
+                        password[i] = ('T');
+                        break;
+                    case 30:
+                        password[i] = ('U');
+                        break;
+                    case 31:
+                        password[i] = ('V');
+                        break;
+                    case 32:
+                        password[i] = ('W');
+                        break;
+                    case 33:
+                        password[i] = ('X');
+                        break;
+                    case 34:
+                        password[i] = ('Y');
+                        break;
+                    case 35:
+                        password[i] = ('Z');
+                        break;
+                    case 36:
+                        password[i] = ('a');
+                        break;
+                    case 37:
+                        password[i] = ('b');
+                        break;
+                    case 38:
+                        password[i] = ('c');
+                        break;
+                    case 39:
+                        password[i] = ('d');
+                        break;
+                    case 40:
+                        password[i] = ('e');
+                        break;
+                    case 41:
+                        password[i] = ('f');
+                        break;
+                    case 42:
+                        password[i] = ('g');
+                        break;
+                    case 43:
+                        password[i] = ('h');
+                        break;
+                    case 44:
+                        password[i] = ('i');
+                        break;
+                    case 45:
+                        password[i] = ('j');
+                        break;
+                    case 46:
+                        password[i] = ('k');
+                        break;
+                    case 47:
+                        password[i] = ('l');
+                        break;
+                    case 48:
+                        password[i] = ('m');
+                        break;
+                    case 49:
+                        password[i] = ('n');
+                        break;
+                    case 50:
+                        password[i] = ('o');
+                        break;
+                    case 51:
+                        password[i] = ('p');
+                        break;
+                    case 52:
+                        password[i] = ('q');
+                        break;
+                    case 53:
+                        password[i] = ('r');
+                        break;
+                    case 54:
+                        password[i] = ('s');
+                        break;
+                    case 55:
+                        password[i] = ('t');
+                        break;
+                    case 56:
+                        password[i] = ('u');
+                        break;
+                    case 57:
+                        password[i] = ('v');
+                        break;
+                    case 58:
+                        password[i] = ('w');
+                        break;
+                    case 59:
+                        password[i] = ('x');
+                        break;
+                    case 60:
+                        password[i] = ('y');
+                        break;
+                    case 61:
+                        password[i] = ('z');
                         break;
                 }
             }
