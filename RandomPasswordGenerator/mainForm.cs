@@ -15,9 +15,6 @@ namespace RandomPasswordGenerator
 {
     public partial class mainForm : Form
     {
-        //Accessing other forms
-        optionsForm of = new optionsForm();
-        AboutBox ab = new AboutBox();
 
         //Variable Declaration
         decimal numPasswords;
@@ -322,12 +319,14 @@ namespace RandomPasswordGenerator
         //Checks to see if the options button has been clicked. If it has open the window.
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            of.Show();
+            var frm = new optionsForm();
+            frm.Show(this);
         }
         //Checks to see if the info button has been clicked. If it has open the window.
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ab.Show();
+            var frm = new AboutBox();
+            frm.Show(this);
         }
 
         //Runs this code when the printToFileButton is clicked.
