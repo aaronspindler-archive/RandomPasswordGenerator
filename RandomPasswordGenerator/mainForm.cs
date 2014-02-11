@@ -22,6 +22,8 @@ namespace RandomPasswordGenerator
         Random gen = new Random();
         static int passwordLength = 16;
         char[] password = new char[passwordLength];
+        int startingValue = 0;
+        int range = 0;
 
         public mainForm()
         {
@@ -55,7 +57,8 @@ namespace RandomPasswordGenerator
         {
             for (int i = 0; i <= passwordLength;i++)
             {
-                int x = gen.Next(10);
+                int x;
+                x = gen.Next(61);
 
                 //Case Numbers
                 //Category              Numbers
