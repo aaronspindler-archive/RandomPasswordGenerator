@@ -15,6 +15,10 @@ namespace RandomPasswordGenerator
 {
     public partial class mainForm : Form
     {
+        //Accessing other forms
+        optionsForm of = new optionsForm();
+        AboutBox ab = new AboutBox();
+
         //Variable Declaration
         decimal numPasswords;
         Boolean progressFull = false;
@@ -25,14 +29,11 @@ namespace RandomPasswordGenerator
         int startingValue = 0;
         int range = 0;
         String convertedPass;
-        Boolean uppercase = false;
-        Boolean lowercase = false;
-        Boolean numbers = false;
-        Boolean specialChar = false;
 
-        //Accessing other forms
-        optionsForm of = new optionsForm();
-        AboutBox ab = new AboutBox();
+        Boolean uppercase;
+        Boolean lowercase;
+        Boolean numbers;
+        Boolean specialChar;
 
         public mainForm()
         {
@@ -67,7 +68,7 @@ namespace RandomPasswordGenerator
             //Runs the code below for however many digits are in the password that is desired
             for (int i = 0; i <= passwordLength;i++)
             {
-                int x = gen.Next(74);
+                int x = gen.Next(range) + startingValue;
 
                 //Case Numbers
                 //Category              Numbers
