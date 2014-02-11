@@ -64,17 +64,21 @@ namespace RandomPasswordGenerator
 
         public void randomPasswordGen()
         {
+            //Runs the code below for however many digits are in the password that is desired
             for (int i = 0; i <= passwordLength;i++)
             {
-                int x = gen.Next(62);
+                int x = gen.Next(74);
 
                 //Case Numbers
                 //Category              Numbers
                 //Numbers               0 - 9
                 //Uppercase             10 - 35
                 //Lowercase             36 - 61
-                //Special Characters    62 - 
+                //Special Characters    62 - 74
 
+
+                //Very long a tedious way of getting a random character.
+                //I will try to shorten this once I know how to do it.
                 switch(x)
                 {
                     case 0:
@@ -263,7 +267,47 @@ namespace RandomPasswordGenerator
                     case 61:
                         password[i] = ('z');
                         break;
+                    case 62:
+                        password[i] = ('!');
+                        break;
+                    case 63:
+                        password[i] = ('@');
+                        break;
+                    case 64:
+                        password[i] = ('#');
+                        break;
+                    case 65:
+                        password[i] = ('$');
+                        break;
+                    case 66:
+                        password[i] = ('%');
+                        break;
+                    case 67:
+                        password[i] = ('^');
+                        break;
+                    case 68:
+                        password[i] = ('&');
+                        break;
+                    case 69:
+                        password[i] = ('*');
+                        break;
+                    case 70:
+                        password[i] = ('-');
+                        break;
+                    case 71:
+                        password[i] = ('_');
+                        break;
+                    case 72:
+                        password[i] = ('+');
+                        break;
+                    case 73:
+                        password[i] = ('=');
+                        break;
+                    case 74:
+                        password[i] = ('?');
+                        break;
                 }
+                //Converts the array into a string so that it can be written to the file.
                 convertedPass = password.ToString();
             }
         }
@@ -285,12 +329,16 @@ namespace RandomPasswordGenerator
             ab.Show();
         }
 
+        //Runs this code when the printToFileButton is clicked.
         private void printToFileButton_Click(object sender, EventArgs e)
         {
+            //Opens a saveFileDialog and then checks to see if the user clicks ok.
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                //Creates a new file writer that is aimed at the filename that the saveFileDialog recieved from the user.
                 using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
                 {
+                    //Runs the code for however many times the user defined.
                     for (int i = 0; i <= numPasswords; i++)
                     {
                         randomPasswordGen();
@@ -324,6 +372,7 @@ namespace RandomPasswordGenerator
                 }
                 else
                 // If something else happened empty the progress bar and fill it again.
+                    //An example of something else happening would be if the user clicked the print to file button twice.
                 {
                     emptyProgress();
                     fillProgress();
