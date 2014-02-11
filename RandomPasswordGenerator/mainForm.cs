@@ -20,10 +20,19 @@ namespace RandomPasswordGenerator
         Boolean progressFull = false;
         Boolean errorOccured = false;
         Random gen = new Random();
-        static int passwordLength = 16;
-        char[] password = new char[passwordLength];
+        int passwordLength = 16;
+        char[] password = new char[16];
         int startingValue = 0;
         int range = 0;
+        String convertedPass;
+        Boolean uppercase = false;
+        Boolean lowercase = false;
+        Boolean numbers = false;
+        Boolean specialChar = false;
+
+        //Accessing other forms
+        optionsForm of = new optionsForm();
+        AboutBox ab = new AboutBox();
 
         public mainForm()
         {
@@ -57,15 +66,14 @@ namespace RandomPasswordGenerator
         {
             for (int i = 0; i <= passwordLength;i++)
             {
-                int x;
-                x = gen.Next(61);
+                int x = gen.Next(62);
 
                 //Case Numbers
                 //Category              Numbers
                 //Numbers               0 - 9
                 //Uppercase             10 - 35
                 //Lowercase             36 - 61
-                //Special Characters    
+                //Special Characters    62 - 
 
                 switch(x)
                 {
@@ -256,27 +264,46 @@ namespace RandomPasswordGenerator
                         password[i] = ('z');
                         break;
                 }
+                convertedPass = password.ToString();
             }
         }
 
-        //Runs everything when it is needed and prints the passwords to a file.
+
+        //Checks to see if the exit button has been clicked. If it has closes the window.
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Checks to see if the options button has been clicked. If it has open the window.
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            of.Show();
+        }
+        //Checks to see if the info button has been clicked. If it has open the window.
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ab.Show();
+        }
+
         private void printToFileButton_Click(object sender, EventArgs e)
         {
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                    using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
+                {
+                    for (int i = 0; i <= numPasswords; i++)
                     {
-                        for (int i = 0; i <= numPasswords; i++)
-                        {
-                            randomPasswordGen();
-                            sw.Write(password);
-                        }
-                        sw.Close();
+                        randomPasswordGen();
+                        sw.NewLine = (convertedPass);
                     }
+                    sw.Close();
+                }
+                //Telling the user that the save has been successful.
                 outputLabel.Text = ("You have saved your passwords to: " + saveFileDialog.FileName);
             }
             else
             {
+                //Telling the user that the save has ran into an error.
                 outputLabel.ForeColor = Color.Red;
                 outputLabel.Text = ("An error has occured");
                 errorOccured = true;
@@ -284,7 +311,7 @@ namespace RandomPasswordGenerator
 
             //Code that fills the progress bar and does all of the fancy visual features.
             // If the progress bar is not full and no errors have occured fill the progress bar.
-            if ((progressFull == false)&&(errorOccured == false))
+            if ((progressFull == false) && (errorOccured == false))
             {
                 fillProgress();
             }
@@ -302,7 +329,6 @@ namespace RandomPasswordGenerator
                     fillProgress();
                 }
             }
-
         }
     }
 }
