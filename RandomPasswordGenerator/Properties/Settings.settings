@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="uppercase" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="lowercase" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="numbers" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="specialChar" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

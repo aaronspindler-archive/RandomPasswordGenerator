@@ -59,6 +59,14 @@ namespace RandomPasswordGenerator
             numPasswords = numberOfPasswordsUD.Value;
         }
 
+        public void whatKindOfPassword()
+        {
+            uppercase = Properties.Settings.Default.uppercase;
+            lowercase = Properties.Settings.Default.lowercase;
+            numbers = Properties.Settings.Default.numbers;
+            specialChar = Properties.Settings.Default.specialChar;
+        }
+
         public void randomPasswordGen()
         {
             //Runs the code below for however many digits are in the password that is desired
