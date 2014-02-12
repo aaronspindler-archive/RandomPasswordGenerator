@@ -15,7 +15,6 @@ namespace RandomPasswordGenerator
 {
     public partial class mainForm : Form
     {
-
         //Variable Declaration
         decimal numPasswords;
         Boolean progressFull = false;
