@@ -137,7 +137,7 @@ namespace RandomPasswordGenerator
             Properties.Settings.Default.lowercase = lowercase;
             Properties.Settings.Default.numbers = numbers;
             Properties.Settings.Default.specialChar = specialChar;
+            Properties.Settings.Default.Save();
         }
-
     }
 }
