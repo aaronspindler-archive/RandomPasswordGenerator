@@ -84,18 +84,22 @@ namespace RandomPasswordGenerator
                 switch(x)
                 {
                     case 0:
+                        howManyChar = 26;
                         int rand1 = gen.Next(howManyChar);
                         password[i] = uppercaseArray[rand1];
                         break;
                     case 1:
+                        howManyChar = 26;
                         int rand2 = gen.Next(howManyChar);
                         password[i] = lowercaseArray[rand2];
                         break;
                     case 2:
+                        howManyChar = 10;
                         int rand3 = gen.Next(howManyChar);
                         password[i] = numbersArray[rand3];
                         break;
                     case 3:
+                        howManyChar = 13;
                         int rand4 = gen.Next(howManyChar);
                         password[i] = specialCharArray[rand4];
                         break;
@@ -150,6 +154,7 @@ namespace RandomPasswordGenerator
             else
             {
                 //Telling the user that the save has ran into an error.
+                System.Windows.Forms.MessageBox.Show("An error has occured!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 outputLabel.ForeColor = Color.Red;
                 outputLabel.Text = ("An error has occured");
                 errorOccured = true;
